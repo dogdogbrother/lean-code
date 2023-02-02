@@ -1,15 +1,15 @@
 import useSWR from 'swr'
-import { getCont, addCont } from './api'
+import { getCount, addCount } from './api'
 
 function Swr() {
-  const { data: cont, isLoading, mutate } = useSWR('getCont', getCont)
+  const { data: count, isLoading, mutate } = useSWR('getCount', getCount)
   async function onAdd() {
-    await mutate(addCont, { optimisticData: cont + 1, populateCache: true })
+    await mutate(addCount, { optimisticData: count + 1, populateCache: true })
   }
   return (
     <div>
       {
-        isLoading ? <p>加载中loading</p> : <p>{ cont }</p>
+        isLoading ? <p>加载中loading</p> : <p>{ count }</p>
       }
       <button onClick={onAdd}>{'点击+1'}</button>
     </div>

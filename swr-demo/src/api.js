@@ -1,20 +1,20 @@
 const data = {
-  cont: 1
+  count: 1
 }
 
-export function getCont() {
+export function getCount() {
   return new Promise(resolve => {
     setTimeout(function(){
-      return resolve(data.cont)
+      return resolve(data.count)
     }, 500);
   })
 }
 
-export function addCont() {
+export function addCount() {
   return new Promise(resolve => {
     setTimeout(function(){
-      data.cont ++
-      return resolve(data.cont)
+      data.count ++
+      return resolve(data.count)
     }, 500);
   })
 }
